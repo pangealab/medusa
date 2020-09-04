@@ -36,8 +36,8 @@ jobs:
       run: mvn -B package --file pom.xml -Dmaven.test.skip=true
 
     # Login to Docker Hub
-#     - name: Login to DockerHub Registry
-#       run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+    - name: Login to DockerHub Registry
+      run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
     # Runs a single command using the runners shell
     - name: Build Docker Image
